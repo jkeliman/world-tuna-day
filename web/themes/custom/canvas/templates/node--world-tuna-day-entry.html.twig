@@ -1,0 +1,58 @@
+{%
+  set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'winner-card',
+]
+%}
+{{ attach_library('classy/node') }}
+<<article{{ attributes.addClass(classes) }}>
+
+  {# Placement Badge #}
+  {% if content.field_placement|render|striptags|trim is not empty %}
+    {% set placement = content.field_placement|render|striptags|trim|lower %}
+    {% set badge_class = 'placement-badge--' ~ placement|replace({' ': '-'}) %}
+    <div class="placement-badge {{ badge_class }}">
+      {{ content.field_placement }}
+    </div>
+  {% endif %}
+
+  {# Media Section #}
+  <div class="winner-card__media">
+    {% if content.field_artwork_image|render|striptags|trim is not empty %}
+      {{ content.field_artwork_image }}
+    {% elseif content.field_youtube_link|render|striptags|trim is not empty %}
+      {% set youtube_url = content.field_youtube_link|render|striptags|trim %}
+      {% set video_id = youtube_url|split('v=')|last|split('&')|first %}
+      <a href="{{ youtube_url }}" target="_blank" class="winner-card__media--youtube">
+        <img src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg"
+             alt="YouTube thumbnail" loading="lazy" />
+      </a>
+    {% elseif content.field_pdf_document|render|striptags|trim is not empty %}
+      <a href="{{ file_url(node.field_pdf_document.entity.uri.value) }}"
+         target="_blank" class="winner-card__media--pdf">
+        📄 View PDF
+      </a>
+    {% endif %}
+  </div>
+
+  {# Content Section #}
+  <div class="winner-card__content">
+    {% if content.field_age_group|render|striptags|trim is not empty %}
+      <span class="winner-card__age-group">{{ content.field_age_group }}</span>
+    {% endif %}
+
+    <div class="winner-card__placement">{{ content.field_placement }}</div>
+
+    <h3 class="winner-card__name">{{ content.field_winner_name }}</h3>
+
+    <div class="winner-card__summary">
+      {{ content.field_brief_summary }}
+    </div>
+  </div>
+
+</article>

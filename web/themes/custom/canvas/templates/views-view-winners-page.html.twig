@@ -1,0 +1,127 @@
+{%
+  set classes = [
+  'winners-page',
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
+
+  {# Group rows by category #}
+  {% set categories = {'art': [], 'photo': [], 'lit_adult': [], 'lit_youth': [], 'lit_junior': [], 'video': []} %}
+
+  {% for row in rows %}
+    {% set category = row.content['#row']._entity.field_category.value %}
+    {% set age_group = row.content['#row']._entity.field_age_group.value %}
+
+    {% if category == 'art' %}
+      {% set categories = categories|merge({'art': categories.art|merge([row])}) %}
+    {% elseif category == 'photography' %}
+      {% set categories = categories|merge({'photo': categories.photo|merge([row])}) %}
+    {% elseif category == 'literature' %}
+      {% if age_group == 'adult' %}
+        {% set categories = categories|merge({'lit_adult': categories.lit_adult|merge([row])}) %}
+      {% elseif age_group == '12-17' %}
+        {% set categories = categories|merge({'lit_youth': categories.lit_youth|merge([row])}) %}
+      {% else %}
+        {% set categories = categories|merge({'lit_junior': categories.lit_junior|merge([row])}) %}
+      {% endif %}
+    {% else %}
+      {% set categories = categories|merge({'video': categories.video|merge([row])}) %}
+    {% endif %}
+  {% endfor %}
+
+  {# Art & Craft Section #}
+  {% if categories.art|length > 0 %}
+    <section class="winners-section">
+      <h2 class="category-title">Art & Craft</h2>
+      <div class="winners-grid winners-grid--three">
+        {% for row in categories.art %}
+          {{ row.content }}
+        {% endfor %}
+      </div>
+    </section>
+    <hr class="category-divider" />
+  {% endif %}
+
+  {# Photography Section #}
+  {% if categories.photo|length > 0 %}
+    <section class="winners-section">
+      <h2 class="category-title">Photography</h2>
+      <p class="category-subtitle">Sustaining Tuna, Sustaining Nations</p>
+      <div class="winners-grid winners-grid--one">
+        {% for row in categories.photo %}
+          {{ row.content }}
+        {% endfor %}
+      </div>
+    </section>
+    <hr class="category-divider" />
+  {% endif %}
+
+  {# Literature Section #}
+  {% if categories.lit_adult|length > 0 or categories.lit_youth|length > 0 or categories.lit_junior|length > 0 %}
+    <section class="winners-section">
+      <h2 class="category-title">Literature</h2>
+
+      {% if categories.lit_adult|length > 0 %}
+        <div class="age-group-section">
+          <h3 class="age-group-title">Adult Category (18+)</h3>
+          <div class="winners-grid winners-grid--three">
+            {% for row in categories.lit_adult %}
+              {{ row.content }}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if categories.lit_youth|length > 0 %}
+        <div class="age-group-section">
+          <h3 class="age-group-title">Youth Category (12-17 years)</h3>
+          <div class="winners-grid winners-grid--three">
+            {% for row in categories.lit_youth %}
+              {{ row.content }}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if categories.lit_junior|length > 0 %}
+        <div class="age-group-section">
+          <h3 class="age-group-title">Junior Category (7-11 years)</h3>
+          <div class="winners-grid winners-grid--three">
+            {% for row in categories.lit_junior %}
+              {{ row.content }}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </section>
+    <hr class="category-divider" />
+  {% endif %}
+
+  {# Video & Music Section #}
+  {% if categories.video|length > 0 %}
+    <section class="winners-section">
+      <h2 class="category-title">Video & Music</h2>
+      <div class="winners-grid winners-grid--two">
+        {% for row in categories.video %}
+          {{ row.content }}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+</div>

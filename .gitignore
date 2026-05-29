@@ -1,0 +1,29 @@
+# Ignore Drupal files that shouldn't be in version control
+/web/sites/*/files
+/web/sites/*/private
+/web/sites/*/settings.local.php
+/web/sites/*/services*.yml
+/web/sites/default/settings.php
+
+# Ignore vendor and dependencies (managed by Composer)
+/vendor/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+
+# Ignore DDEV
+.ddev/
+.ddev/config.local.yaml
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE
+.idea/
+*.code-workspace
+
+# Ignore logs
+*.log

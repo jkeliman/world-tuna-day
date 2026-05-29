@@ -1,0 +1,18 @@
+name: 'Canvas'
+type: theme
+description: 'Custom theme for World Tuna Day Winners display'
+core_version_requirement: ^10
+base theme: olivero
+libraries:
+  - canvas/global-styling
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  highlighted: Highlighted
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
