@@ -1,0 +1,5 @@
+name: 'World Tuna Day'
+type: module
+description: 'Custom functionality for World Tuna Day content type'
+core_version_requirement: ^10
+package: Custom

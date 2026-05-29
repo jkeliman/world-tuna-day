@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Custom module for World Tuna Day functionality.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function world_tuna_day_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Target the World Tuna Day content type edit/create forms
+  if ($form_id === 'node_world_tuna_day_form' || $form_id === 'node_world_tuna_day_edit_form') {
+    
+    // Check if the Age Group field exists
+    if (isset($form['field_age_group'])) {
+      
+      // Add #states to show/hide based on Category selection
+      $form['field_age_group']['#states'] = [
+        'visible' => [
+          ':input[name="field_category"]' => ['value' => 'Literature'],
+        ],
+        'required' => [
+          ':input[name="field_category"]' => ['value' => 'Literature'],
+        ],
+      ];
+    }
+  }
+}
