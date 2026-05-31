@@ -187,3 +187,24 @@
 .winners-grid--one .view-content {
   gap: 30px !important;
 }
+
+/* YouTube thumbnail styling */
+.winner-card__media--youtube img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PDF thumbnail styling */
+.winner-card__media--pdf {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.winner-card__media--pdf img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+}
