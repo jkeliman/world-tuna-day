@@ -6,5 +6,5 @@ global-styling:
   js:
     js/canvas.js: {}
   dependencies:
-    - core/jquery
     - core/drupal
+    # Removed core/jquery — not needed

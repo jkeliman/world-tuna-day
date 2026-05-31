@@ -1,0 +1,8 @@
+conditional_fields:
+  version: 1.x
+  js:
+    js/conditional-fields.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

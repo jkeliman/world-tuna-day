@@ -1,8 +1,7 @@
-/* ===== WINNERS PAGE STYLES ===== */
-
+/* ===== WINNERS PAGE ===== */
 .winners-section {
   padding: 60px 20px;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -23,7 +22,6 @@
   font-style: italic;
 }
 
-/* Category divider */
 .category-divider {
   border: none;
   height: 3px;
@@ -31,50 +29,37 @@
   margin: 60px 0;
 }
 
-/* ===== CARD GRID SYSTEM ===== */
-
-.winners-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: stretch;
-}
-
-/* 3-column layout (Art, Literature) */
-.winners-grid--three {
+/* ===== GRID — applied to .view-content via parent class ===== */
+.winners-grid--three .view-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 15px;
 }
 
-/* 2-column layout (Video/Music) */
-.winners-grid--two {
+.winners-grid--two .view-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-/* 1-column centered (Photography) */
-.winners-grid--one {
+.winners-grid--one .view-content {
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 500px;
+  gap: 30px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-/* ===== WINNER CARDS ===== */
-
+/* ===== CARDS ===== */
 .winner-card {
   background: #ffffff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .winner-card:hover {
@@ -82,114 +67,70 @@
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
-/* Placement badge */
+/* ===== PLACEMENT BADGES ===== */
 .placement-badge {
   position: absolute;
   top: 15px;
   left: 15px;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 1.2rem;
-  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1;
+  color: #333;
   z-index: 10;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .placement-badge--first {
   background: linear-gradient(135deg, #ffd700, #ffed4e);
-  color: #333;
 }
 
 .placement-badge--second {
   background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
-  color: #333;
 }
 
 .placement-badge--third {
   background: linear-gradient(135deg, #cd7f32, #daa520);
-  color: white;
+  color: #fff;
 }
 
+/* ===== MEDIA ===== */
 .winner-card__media {
-  position: relative;
   width: 100%;
   aspect-ratio: 4/3;
   overflow: hidden;
   background: #f8f9fa;
 }
 
-.winner-card__media img,
-.winner-card__media iframe {
+.winner-card__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* PDF thumbnail styling */
-.winner-card__media--pdf {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
-}
-
-.winner-card__media--pdf::before {
-  content: '📄 PDF';
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* YouTube thumbnail styling */
-.winner-card__media--youtube {
-  position: relative;
-}
-
-.winner-card__media--youtube::after {
-  content: '▶';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: white;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  opacity: 0.9;
-}
-
+/* ===== CARD CONTENT ===== */
 .winner-card__content {
   padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.winner-card__placement {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #7f8c8d;
-  margin-bottom: 5px;
 }
 
 .winner-card__name {
   font-size: 1.3rem;
   font-weight: bold;
   color: #2c3e50;
-  margin-bottom: 10px;
+  margin: 5px 0 10px 0;
 }
 
 .winner-card__summary {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #5d6d7e;
-  flex-grow: 1;
 }
 
 .winner-card__age-group {
@@ -202,7 +143,7 @@
   margin-bottom: 10px;
 }
 
-/* Age group sub-sections */
+/* ===== AGE GROUP SECTIONS ===== */
 .age-group-section {
   margin-bottom: 40px;
 }
@@ -217,32 +158,8 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .winners-grid--three,
-  .winners-grid--two {
+  .winners-grid--three .view-content,
+  .winners-grid--two .view-content {
     grid-template-columns: 1fr;
   }
-
-  .category-title {
-    font-size: 1.8rem;
-  }
 }
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.winner-card {
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.winner-card:nth-child(1) { animation-delay: 0.1s; }
-.winner-card:nth-child(2) { animation-delay: 0.2s; }
-.winner-card:nth-child(3) { animation-delay: 0.3s; }
