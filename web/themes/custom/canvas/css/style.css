@@ -1,6 +1,6 @@
 /* ===== WINNERS PAGE ===== */
 .winners-section {
-  padding: 60px 20px;
+  padding: 30px 20px 10px 20px;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -26,7 +26,7 @@
   border: none;
   height: 3px;
   background: linear-gradient(90deg, transparent, #2e86c1, transparent);
-  margin: 60px 0;
+  margin: 30px 0;
 }
 
 /* ===== GRID — applied to .view-content via parent class ===== */
@@ -68,6 +68,7 @@
 }
 
 /* ===== PLACEMENT BADGES ===== */
+/* ===== PLACEMENT BADGES ===== */
 .placement-badge {
   position: absolute;
   top: 15px;
@@ -79,23 +80,27 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-align: center;
-  line-height: 1;
+  line-height: 1.1;
   color: #333;
   z-index: 10;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 4px;
 }
 
-.placement-badge--first {
+/* Gold - 1st Place */
+.placement-badge[class*="st-place"] {
   background: linear-gradient(135deg, #ffd700, #ffed4e);
 }
 
-.placement-badge--second {
+/* Silver - 2nd Place */
+.placement-badge[class*="nd-place"] {
   background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
 }
 
-.placement-badge--third {
+/* Bronze - 3rd Place */
+.placement-badge[class*="rd-place"] {
   background: linear-gradient(135deg, #cd7f32, #daa520);
   color: #fff;
 }
@@ -162,4 +167,23 @@
   .winners-grid--two .view-content {
     grid-template-columns: 1fr;
   }
+}
+
+/* Override all Olivero view gaps for this page */
+.path-world-tuna-day-winners .view-content,
+.path-world-tuna-day-winners .view {
+  gap: 0 !important;
+}
+
+/* Re-apply only the card grid gap */
+.winners-grid--three .view-content {
+  gap: 10px !important;
+}
+
+.winners-grid--two .view-content {
+  gap: 40px !important;
+}
+
+.winners-grid--one .view-content {
+  gap: 30px !important;
 }
