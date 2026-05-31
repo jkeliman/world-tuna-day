@@ -1,0 +1,23 @@
+uuid: 0b9265cb-0df8-4b18-ac43-30ecaae7e38a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - canvas
+_core:
+  default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
+id: canvas_syndicate
+theme: canvas
+region: header
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

@@ -1,0 +1,154 @@
+uuid: f918629e-6031-41a9-b0bf-325e683a3182
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.world_tuna_day.body
+    - field.field.node.world_tuna_day.field_age_group
+    - field.field.node.world_tuna_day.field_artwork_photo
+    - field.field.node.world_tuna_day.field_brief_summary
+    - field.field.node.world_tuna_day.field_category
+    - field.field.node.world_tuna_day.field_competition_year
+    - field.field.node.world_tuna_day.field_pdf_document
+    - field.field.node.world_tuna_day.field_placement
+    - field.field.node.world_tuna_day.field_winner_name
+    - field.field.node.world_tuna_day.field_youtube_link
+    - image.style.thumbnail
+    - node.type.world_tuna_day
+  module:
+    - file
+    - image
+    - link
+    - path
+    - text
+id: node.world_tuna_day.default
+targetEntityType: node
+bundle: world_tuna_day
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_age_group:
+    type: options_select
+    weight: 124
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_artwork_photo:
+    type: image_image
+    weight: 126
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_brief_summary:
+    type: text_textarea
+    weight: 129
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_category:
+    type: options_select
+    weight: 122
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_competition_year:
+    type: number
+    weight: 130
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_pdf_document:
+    type: file_generic
+    weight: 127
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_placement:
+    type: options_select
+    weight: 123
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_winner_name:
+    type: string_textfield
+    weight: 125
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_youtube_link:
+    type: link_default
+    weight: 128
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

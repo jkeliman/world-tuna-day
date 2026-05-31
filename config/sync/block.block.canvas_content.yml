@@ -1,0 +1,22 @@
+uuid: 6d8d4cc4-5429-479b-849c-b8d6f6ddfc8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - canvas
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: canvas_content
+theme: canvas
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

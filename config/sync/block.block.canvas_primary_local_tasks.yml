@@ -1,0 +1,22 @@
+uuid: cb7bc8ba-ea63-4d2f-93c0-051781fff978
+langcode: en
+status: true
+dependencies:
+  theme:
+    - canvas
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: canvas_primary_local_tasks
+theme: canvas
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

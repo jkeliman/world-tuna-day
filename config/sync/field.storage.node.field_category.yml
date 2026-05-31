@@ -1,0 +1,33 @@
+uuid: dfe6ef92-6b59-4065-aa7a-d7b5b95d0004
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_category
+field_name: field_category
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: art_craft
+      label: 'Art & Craft'
+    -
+      value: photography
+      label: Photography
+    -
+      value: literature
+      label: Literature
+    -
+      value: video_music
+      label: 'Video & Music'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

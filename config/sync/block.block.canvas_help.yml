@@ -1,0 +1,22 @@
+uuid: c67b3030-c640-4831-87c7-9b34d4510460
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - canvas
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: canvas_help
+theme: canvas
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

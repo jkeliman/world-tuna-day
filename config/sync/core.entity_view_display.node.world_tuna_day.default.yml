@@ -1,0 +1,117 @@
+uuid: 7050e511-7603-440c-aa6c-5a11a08ac66f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.world_tuna_day.body
+    - field.field.node.world_tuna_day.field_age_group
+    - field.field.node.world_tuna_day.field_artwork_photo
+    - field.field.node.world_tuna_day.field_brief_summary
+    - field.field.node.world_tuna_day.field_category
+    - field.field.node.world_tuna_day.field_competition_year
+    - field.field.node.world_tuna_day.field_pdf_document
+    - field.field.node.world_tuna_day.field_placement
+    - field.field.node.world_tuna_day.field_winner_name
+    - field.field.node.world_tuna_day.field_youtube_link
+    - node.type.world_tuna_day
+  module:
+    - file
+    - image
+    - link
+    - options
+    - text
+    - user
+id: node.world_tuna_day.default
+targetEntityType: node
+bundle: world_tuna_day
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_age_group:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_artwork_photo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_brief_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_category:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_competition_year:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_pdf_document:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_placement:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_winner_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_youtube_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

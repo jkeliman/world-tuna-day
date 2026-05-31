@@ -1,0 +1,22 @@
+uuid: dc6b6fdd-889e-46d7-9197-073516e083eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_brief_summary
+    - node.type.world_tuna_day
+  module:
+    - text
+id: node.world_tuna_day.field_brief_summary
+field_name: field_brief_summary
+entity_type: node
+bundle: world_tuna_day
+label: 'Brief Summary'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

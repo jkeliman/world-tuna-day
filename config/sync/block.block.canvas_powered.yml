@@ -1,0 +1,22 @@
+uuid: d8f892c2-3e3e-48c0-ba1e-1ee102b53cce
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - canvas
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: canvas_powered
+theme: canvas
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

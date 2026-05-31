@@ -1,0 +1,18 @@
+uuid: 0fca0cec-0428-4c74-b822-d0da51fb25de
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'World Tuna Day'
+type: world_tuna_day
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,21 @@
+uuid: 7b015626-e0ba-46c5-a46d-316f9a6392d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_placement
+    - node.type.world_tuna_day
+  module:
+    - options
+id: node.world_tuna_day.field_placement
+field_name: field_placement
+entity_type: node
+bundle: world_tuna_day
+label: Placement
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

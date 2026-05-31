@@ -1,0 +1,25 @@
+uuid: 12462c1c-84d6-48f1-bacd-3baed99ed472
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_competition_year
+    - node.type.world_tuna_day
+id: node.world_tuna_day.field_competition_year
+field_name: field_competition_year
+entity_type: node
+bundle: world_tuna_day
+label: 'Competition Year'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 2026
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,21 @@
+uuid: c6769ea2-01e8-43f8-b475-f81e6c27ddbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_age_group
+    - node.type.world_tuna_day
+  module:
+    - options
+id: node.world_tuna_day.field_age_group
+field_name: field_age_group
+entity_type: node
+bundle: world_tuna_day
+label: 'Age Group'
+description: 'only in literature'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

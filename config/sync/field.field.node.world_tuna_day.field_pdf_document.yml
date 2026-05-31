@@ -1,0 +1,27 @@
+uuid: dde1adfb-478c-4486-9389-d906cbd4305e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pdf_document
+    - node.type.world_tuna_day
+  module:
+    - file
+id: node.world_tuna_day.field_pdf_document
+field_name: field_pdf_document
+entity_type: node
+bundle: world_tuna_day
+label: 'PDF Document'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: true
+field_type: file
